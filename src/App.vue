@@ -18,8 +18,8 @@
 
 <script>
 import homePage from './components/homePage';
-import newsPage from './components/newsPage';
-import settingsPage from './components/settingsPage';
+import regeditPage from './components/regeditPage';
+import myPage from './components/myPage';
 export default {
   name: "app",
   data() {
@@ -28,7 +28,7 @@ export default {
       tabs: [
         {
           icon: this.md() ? null : 'ion-home',
-          label: 'Home',
+          label: '主页',
           page: homePage,
           props: {
             myProp: 'This is a page prop!'
@@ -36,17 +36,16 @@ export default {
           key: "homePage"
         },
         {
-          icon: this.md() ? null : 'ion-ios-bell',
-          label: 'News',
-          page: newsPage,
-          badge: 7,
-          key: "newsPage"
+          icon: this.md() ? null : 'ion-edit',
+          label: '报名',
+          page: regeditPage,
+          key: "regeditPage"
         },
         {
-          icon: this.md() ? null : 'ion-ios-settings',
-          label: 'Settings',
-          page: settingsPage,
-          key: "settingsPage"
+          icon: this.md() ? null : 'fa-user',
+          label: '我的',
+          page: myPage,
+          key: "myPage"
         }
       ]
     };
@@ -62,7 +61,7 @@ export default {
     }
   },
   components :{
-    homePage,newsPage,settingsPage
+    homePage,regeditPage,myPage
   }
 };
 </script>

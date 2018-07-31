@@ -8,7 +8,7 @@
 
 <script>
 export default {
-name:'newsPage',
+name:'regeditPage',
  data () {
  return {
  };

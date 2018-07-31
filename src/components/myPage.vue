@@ -8,7 +8,7 @@
 
 <script>
 export default {
-name:'settingsPage',
+name:'myPage',
  data () {
  return {
  };

@@ -1,6 +1,7 @@
 // Webpack CSS import
 import 'onsenui/css/onsenui.css';
-import 'onsenui/css/onsen-css-components.css';
+import './onsen-css-components.css';
+
 
 // JS import
 import Vue from 'vue';
@@ -14,6 +15,6 @@ import App from './App.vue';
 Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-  router
+    render: h => h(App),
+    router
 }).$mount('#app')
