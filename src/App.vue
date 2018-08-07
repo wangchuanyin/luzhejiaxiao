@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style>
-.root{
-  toolbar-background-color: rgba(236,34,34,1);
+ons-page:not([modifier~=material]) >.content {
+  margin-top: 49px;
 }
 </style>
