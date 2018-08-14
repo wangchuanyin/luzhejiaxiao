@@ -1,5 +1,6 @@
 <template id="settings">
   <v-ons-page>
+    
      <div class="content">
     <p style="text-align: center">
       Change the settings.
@@ -13,6 +14,7 @@ export default {
 name:'myPage',
  data () {
  return {
+   
  };
  },
 

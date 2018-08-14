@@ -4,13 +4,16 @@
       <v-ons-toolbar>
          <div class="center">{{ title }}</div>
       </v-ons-toolbar>
-    <router-view></router-view>
-    <v-ons-tabbar swipeable  animation="none" position="auto"
+<!--     
+    
+    
+     <router-view></router-view> -->
+     <v-ons-tabbar swipeable   position="auto"
       :tabs="tabs"
       :visible="true"
       :index.sync="activeIndex"
     >
-    </v-ons-tabbar>
+    </v-ons-tabbar> 
 
   </v-ons-page>
   </div>
@@ -48,6 +51,7 @@ export default {
           key: "myPage"
         }
       ]
+     
     };
   },
   methods: {
