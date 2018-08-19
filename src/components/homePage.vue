@@ -1,10 +1,13 @@
 <template id="home">
  <v-ons-page>
-   <v-ons-carousel style="height:200px;width100%" swipeable auto-scroll overscrollable
-      :index.sync="carouselIndex"
+   <v-ons-carousel style="height:200px;width100%" swipeable auto-scroll :overscrollable="true"
+      :index.sync="carouselIndex" update:index
     >
       <v-ons-carousel-item v-for="(value, key) in items" :key="key" :style="{backgroundColor: value}">
-        <div style="text-align: center; font-size: 30px; margin-top: 49px; color: #fff;">{{key}}</div>
+        <div style="text-align: center; font-size: 30px; margin-top: 49px; color: #fff;">
+          <img src="../assets/image/banner.jpg"/>
+
+        </div>
       </v-ons-carousel-item>
     </v-ons-carousel>
 
@@ -12,7 +15,7 @@
       <span :index="dotIndex - 1" v-for="dotIndex in Object.keys(items).length" :key="dotIndex" style="cursor: pointer" @click="carouselIndex = dotIndex - 1">
         {{ carouselIndex === dotIndex - 1 ? '\u25CF' : '\u25CB' }}
       </span>
-    </div>
+    </div> 
    <div class="content">
     <p style="text-align: center">
       Welcome home.<br><br>{{ myProp }}
