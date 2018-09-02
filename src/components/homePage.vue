@@ -1,18 +1,18 @@
 <template id="home">
  <v-ons-page>
-   <v-ons-carousel style="height:200px;width100%" swipeable auto-scroll :overscrollable="true"
-      :index.sync="carouselIndex" update:index
+   <v-ons-carousel id="ons-carousel" class="home-swiper" fullscreen swipeable auto-refresh auto-scroll overscrollable
+      :index.sync="carouselIndex" auto-scroll-ratio="0.1" 
     >
-      <v-ons-carousel-item v-for="(value, key) in items" :key="key" :style="{backgroundColor: value}">
-        <div style="text-align: center; font-size: 30px; margin-top: 49px; color: #fff;">
-          <img src="../assets/image/banner.jpg"/>
+      <v-ons-carousel-item v-for="(value, key) in swiper" :key="key" class="home-swiper-item">
+        <div class="home-swiper-img">
+          <img :src="value.img"/>
 
         </div>
       </v-ons-carousel-item>
     </v-ons-carousel>
 
     <div :style="dots">
-      <span :index="dotIndex - 1" v-for="dotIndex in Object.keys(items).length" :key="dotIndex" style="cursor: pointer" @click="carouselIndex = dotIndex - 1">
+      <span :index="dotIndex - 1" v-for="dotIndex in Object.keys(swiper).length" :key="dotIndex" style="cursor: pointer" @click="carouselIndex = dotIndex - 1">
         {{ carouselIndex === dotIndex - 1 ? '\u25CF' : '\u25CB' }}
       </span>
     </div> 
@@ -31,11 +31,17 @@ props:["myProp"],
  data () {
  return {
    carouselIndex: 0,
-   items: {
-        BLUE: '#085078',
-        DARK: '#373B44',
-        ORANGE: '#D38312'
-    },
+   swiper:[
+        {
+          img:"https://shopstatic.vivo.com.cn/vivoshop/commodity/20180418/20180418104131830678_original.jpg"
+        },
+        {
+          img:"https://shopstatic.vivo.com.cn/vivoshop/commodity/20180430/20180430232146894398_original.jpg"
+        },
+         {
+          img:"https://shopstatic.vivo.com.cn/vivoshop/commodity/20180430/20180430232146894398_original.jpg"
+        }             
+    ],
     dots: {
         textAlign: 'center',
         fontSize: '30px',
@@ -48,15 +54,28 @@ props:["myProp"],
  };
  },
 
+mounted(){
+  
+},
  components: {},
 
  computed: {},
 
 
 
- methods: {}
+ methods: {
+   
+ }
 }
 
 </script>
 <style  scoped>
+.home-swiper{
+   height: 5.5rem;
+   width:100%;
+   margin-top:1px;
+}
+       
+        
+
 </style>

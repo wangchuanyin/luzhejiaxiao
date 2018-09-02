@@ -4,11 +4,8 @@
       <v-ons-toolbar>
          <div class="center">{{ title }}</div>
       </v-ons-toolbar>
-<!--     
-    
-    
-     <router-view></router-view> -->
-     <v-ons-tabbar swipeable   position="auto"
+
+     <v-ons-tabbar    position="auto"
       :tabs="tabs"
       :visible="true"
       :index.sync="activeIndex"
@@ -23,6 +20,7 @@
 import homePage from './components/homePage';
 import regeditPage from './components/regeditPage';
 import myPage from './components/myPage';
+import rem from './rem/rem.js'
 export default {
   name: "app",
   data() {
@@ -71,7 +69,5 @@ export default {
 </script>
 
 <style>
-ons-page:not([modifier~=material]) >.content {
-  margin-top: 49px;
-}
+
 </style>
