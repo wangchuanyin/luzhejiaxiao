@@ -16,10 +16,8 @@
         {{ carouselIndex === dotIndex - 1 ? '\u25CF' : '\u25CB' }}
       </span>
     </div> 
-   <div class="content">
-    <p style="text-align: center">
-      Welcome home.<br><br>{{ myProp }}
-    </p>
+   <div class="navigationItems">
+    
    </div>
   </v-ons-page>
 </template>
@@ -33,13 +31,13 @@ props:["myProp"],
    carouselIndex: 0,
    swiper:[
         {
-          img:"https://shopstatic.vivo.com.cn/vivoshop/commodity/20180418/20180418104131830678_original.jpg"
+          img:"/image/b1.jpg"
         },
         {
-          img:"https://shopstatic.vivo.com.cn/vivoshop/commodity/20180430/20180430232146894398_original.jpg"
+          img:"/image/b2.jpg"
         },
          {
-          img:"https://shopstatic.vivo.com.cn/vivoshop/commodity/20180430/20180430232146894398_original.jpg"
+           img:"/image/b1.jpg"
         }             
     ],
     dots: {
@@ -53,7 +51,10 @@ props:["myProp"],
     }
  };
  },
+created(){
+;
 
+},
 mounted(){
   
 },
@@ -71,11 +72,24 @@ mounted(){
 </script>
 <style  scoped>
 .home-swiper{
-   height: 5.5rem;
+   height: 20rem;
    width:100%;
    margin-top:1px;
 }
-       
+.home-swiper .home-swiper-img > img{
+ 
+  height: 20rem;
+   width:100%;
+}
+.navigationItems{
+  display: flex;
+  background-color:#fff;
+  width: 100%;
+  height: 16rem;
+  flex-direction: row;
+  justify-content: center;
+  margin-top:0.5rem;
+}     
         
 
 </style>
