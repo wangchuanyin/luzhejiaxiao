@@ -52,7 +52,7 @@ props:["myProp"],
  };
  },
 created(){
-;
+
 
 },
 mounted(){
