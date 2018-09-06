@@ -29,7 +29,7 @@ export default {
       tabs: [
         {
           icon: this.md() ? null : 'ion-home',
-          label: '主页',
+          label: '东山阴驾校',
           page: homePage,
           props: {
             myProp: 'This is a page prop!'
