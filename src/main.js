@@ -1,8 +1,7 @@
 // Webpack CSS import
 import 'onsenui/css/onsenui.css';
 import './onsen-css-components.css';
-
-
+import storeLike from './store.js';
 // JS import
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -16,6 +15,7 @@ Vue.config.productionTip = false;
 new Vue({
     el: '#app',
     render: h => h(App),
+    store: new Vuex.Store(storeLike),
     beforeCreate() {
         // Shortcut for Material Design
         Vue.prototype.md = this.$ons.platform.isAndroid();

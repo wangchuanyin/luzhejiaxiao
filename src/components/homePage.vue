@@ -23,9 +23,9 @@
           </v-ons-fab>
          <div class="itemTxt"><span >驾校简介</span></div>
        </div>
-       <div class="navigationItem"> 
+       <div class="navigationItem" @click="pushRegPage()"> 
 
-        
+          
           <v-ons-fab class="itemImg" style="background-color:rgb(255, 192, 0);">
             <v-ons-icon icon="md-edit"></v-ons-icon>
           </v-ons-fab>
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import regeditPage from "./regeditPage";
 export default {
     name:'homePage', 
     props:["myProp"],  
@@ -76,9 +77,14 @@ export default {
         var _self = this;
         window.setInterval(_self.updateNavImg,3000);
     },
+    components:{
+      regeditPage
+    },
     methods: {
-        updateNavImg(){
-            console.log("=======");
+      pushRegPage(){
+        this.$emit('push-page',regeditPage);
+      },
+      updateNavImg(){
               this.carouselIndex++;
              if(this.carouselIndex>2){
               this.carouselIndex = 0;

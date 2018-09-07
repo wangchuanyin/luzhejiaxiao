@@ -1,18 +1,26 @@
 <template>
+
   <div id="app">
-    <v-ons-page>
-      <v-ons-toolbar>
-         <div class="center">{{ title }}</div>
-      </v-ons-toolbar>
+    <v-ons-navigator swipeable
+      :page-stack="pageStack"
+      @push-page="pageStack.push($event)">
+   
+      <v-ons-page>
+        <v-ons-toolbar>
+          <div class="left">
+              <v-ons-back-button @click.prevent="pageStack.splice(1, pageStack.length - 1)"></v-ons-back-button>
+          </div>
+          <div class="center">{{ title }}</div>
+        </v-ons-toolbar>
 
-     <v-ons-tabbar    position="auto"
-      :tabs="tabs"
-      :visible="true"
-      :index.sync="activeIndex"
-    >
-    </v-ons-tabbar> 
-
-  </v-ons-page>
+      <v-ons-tabbar    position="auto"
+        :tabs="tabs"
+        :visible="true"
+        :index.sync="activeIndex"
+      >
+      </v-ons-tabbar> 
+    </v-ons-page> 
+  </v-ons-navigator>
   </div>
 </template>
 
@@ -25,6 +33,7 @@ export default {
   name: "app",
   data() {
     return {
+      pageStack: [homePage],
       activeIndex: 0,
       tabs: [
         {
