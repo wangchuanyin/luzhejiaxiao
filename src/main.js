@@ -6,17 +6,22 @@ import storeLike from './store.js';
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VueOnsen from 'vue-onsenui';
+import App from './App.vue';
 Vue.use(Vuex);
 Vue.use(VueOnsen);
-import App from './App.vue';
-
 Vue.config.productionTip = false;
 
 new Vue({
     el: '#app',
     render: h => h(App),
     store: new Vuex.Store(storeLike),
+    data() {
+        return {
+            
+        };
+    },
     beforeCreate() {
+         //this.$store.commit('navigator/push', appTabbar);
         // Shortcut for Material Design
         Vue.prototype.md = this.$ons.platform.isAndroid();
 

@@ -4,14 +4,14 @@
           <div class="left">
               <v-ons-back-button >返回</v-ons-back-button> 
           </div>
-          <div class="center">我要报名</div>
+          <div class="center">个人中心</div>
     </v-ons-toolbar>
   </v-ons-page>
 </template>
 
 <script>
 export default {
-name:'regeditPage',
+name:'myProfilePage',
  data () {
  return {
  };

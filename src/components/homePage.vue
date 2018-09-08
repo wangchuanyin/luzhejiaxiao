@@ -17,7 +17,7 @@
       </span>
     </div> 
     <div class="navigationItems">
-       <div class="navigationItem"> 
+       <div class="navigationItem" @click="pushIntro()"> 
           <v-ons-fab class="itemImg" style="background-color:rgb(5, 197, 174);">
             <v-ons-icon icon="md-car" ></v-ons-icon>
           </v-ons-fab>
@@ -32,7 +32,7 @@
          
          <div class="itemTxt" ><span >我要报名</span></div>
        </div>
-       <div class="navigationItem"> 
+       <div class="navigationItem" @click="pushRecommendPage()"> 
 
           <v-ons-fab class="itemImg"  style="background-color:rgba(230, 22, 22, 1);">
             <v-ons-icon icon="md-account-add"></v-ons-icon>
@@ -45,9 +45,12 @@
 
 <script>
 import regeditPage from "./regeditPage";
+import recommendPage from "./recommendPage";
+import introducePage from "./introducePage";
+import myProfilePage from "./myProfilePage";
 export default {
     name:'homePage', 
-    props:["myProp"],  
+   
     data () {
         return {
           carouselIndex: 0,
@@ -78,11 +81,17 @@ export default {
         window.setInterval(_self.updateNavImg,3000);
     },
     components:{
-      regeditPage
+      introducePage,regeditPage,recommendPage,myProfilePage
     },
     methods: {
+      pushIntro(){
+        this.$store.commit('navigator/push',introducePage);
+      },
       pushRegPage(){
-        this.$emit('push-page',regeditPage);
+        this.$store.commit('navigator/push',regeditPage);
+      },
+      pushRecommendPage(){
+         this.$store.commit('navigator/push',recommendPage);
       },
       updateNavImg(){
               this.carouselIndex++;
