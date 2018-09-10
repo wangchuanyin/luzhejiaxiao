@@ -40,7 +40,9 @@
          <div class="itemTxt"><span >我要推荐</span></div>
        </div>
    </div> 
+    <news-page class="newsPage"></news-page>
   </v-ons-page>
+  
 </template>
 
 <script>
@@ -48,6 +50,7 @@ import regeditPage from "./regeditPage";
 import recommendPage from "./recommendPage";
 import introducePage from "./introducePage";
 import myProfilePage from "./myProfilePage";
+import newsPage from "./newsPage";
 export default {
     name:'homePage', 
    
@@ -81,7 +84,7 @@ export default {
         window.setInterval(_self.updateNavImg,3000);
     },
     components:{
-      introducePage,regeditPage,recommendPage,myProfilePage
+      introducePage,regeditPage,recommendPage,myProfilePage,newsPage
     },
     methods: {
       pushIntro(){
@@ -122,7 +125,7 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   margin-top: 0.1rem;
-  padding-top: 0.5rem;
+  padding-top: 2rem;
 }
 
 .navigationItems .navigationItem {
@@ -143,5 +146,8 @@ export default {
   color: #666;
   padding: 0;
   word-wrap: normal;
+}
+.newsPage{
+  margin-top:0.2rem;
 }
 </style>
