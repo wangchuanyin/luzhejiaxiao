@@ -138,6 +138,7 @@ export default {
   height: 5rem;
   display: block;
   margin: 0 auto 6px auto;
+  transition:none
 }
 .navigationItems .navigationItem .itemTxt {
   font-size: 1.2rem;
