@@ -9,11 +9,9 @@
 
     <v-ons-tabbar    position="auto"
         :tabs="tabs"
-        :index.sync="activeIndex"
+        :index.sync="activeIndex" 
      >
-         <template slot="pages">
-       <component v-for="tab in tabs" :is="tab.page" :key="tab.key" :page-stack="pageStack"></component> 
-      </template>
+     
       </v-ons-tabbar> 
     </v-ons-page> 
 </template>
@@ -68,7 +66,6 @@ name:'appTabbar',
     homePage,regeditPage,myProfilePage
   }
 };
-
 </script>
 <style  scoped>
 </style>

@@ -1,5 +1,5 @@
-<template id="home">
- <v-ons-page>
+<template >
+ <v-ons-page id="homePage">
    <v-ons-carousel id="ons-carousel" class="home-swiper" fullscreen swipeable  auto-scroll overscrollable
       :index.sync="carouselIndex" auto-refresh auto-scroll-ratio="0.1" 
     >
@@ -79,9 +79,29 @@ export default {
             }
         };
     },
+    created(){
+      let self = this;
+      document.addEventListener('hide', function(event) {
+          if (event.target.matches('#homePage')) {
+              window.clearInterval(self.intervalid1);
+          }
+        }, false);
+      document.addEventListener('show', function(event) {
+        self.carouselIndex = 0;
+          if (event.target.matches('#homePage')) {
+               self.refreshNav();
+          }
+        }, false);
+    },
     mounted(){
         var _self = this;
-        window.setInterval(_self.updateNavImg,3000);
+    },
+    beforeDestroy(){
+      console.log("this is beforeDestory.......");
+      window.clearInterval(this.intervalid1);
+    },
+    destroyed(){
+      console.log("this is destroyed...........");
     },
     components:{
       introducePage,regeditPage,recommendPage,myProfilePage,newsPage
@@ -96,15 +116,23 @@ export default {
       pushRecommendPage(){
          this.$store.commit('navigator/push',recommendPage);
       },
-      updateNavImg(){
-              this.carouselIndex++;
-             if(this.carouselIndex>2){
+      refreshNav(){
+        this.intervalid1 = window.setInterval(function(){
+          console.log("------");
+          if(this.carouselIndex<=0)
+          {
+            this.carouselIndex++;
+          }
+          if(this.carouselIndex>2){
               this.carouselIndex = 0;
-             }
+          }
             document.querySelector('#ons-carousel').setActiveIndex(this.carouselIndex);
-        }
+        }.bind(this),3000);
+      }
     }
+     
 }
+
 
 </script>
 <style  scoped>

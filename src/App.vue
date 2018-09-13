@@ -4,7 +4,6 @@
       :options="options"
       :pop-page="storePop"
     > 
-    <!-- <component v-for="(page,index) in pageStack" :is="page" :key="index" :page-stack="pageStack"></component> -->
    </v-ons-navigator>
    
 </template>
@@ -33,6 +32,9 @@ export default {
     options() {
       return this.$store.state.navigator.options;
     }
+  },
+  components:{
+    appTabbar
   }
 };
 </script>
